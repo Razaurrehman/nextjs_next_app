@@ -16,7 +16,7 @@ function PostDetial({ post }) {
 
 export async function getStaticProps(centext) {
     const { params } = centext;
-    const response = await fetch(`http://localhost:4000/posts/${params.postId}`);
+    const response = await fetch(`https://6da8-180-178-133-66.ngrok.io/posts/${params.postId}`);
     const data = await response.json();
     return {
         props: {
@@ -27,7 +27,7 @@ export async function getStaticProps(centext) {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch('http://localhost:4000/posts')
+    const res = await fetch('https://6da8-180-178-133-66.ngrok.io/posts')
     const posts = await res.json()
     const paths = posts.map((post) => ({
       params: { postId: post.id.toString() },

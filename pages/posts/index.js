@@ -19,7 +19,7 @@ function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:4000/posts')
+  const res = await fetch('https://6da8-180-178-133-66.ngrok.io/posts')
   const posts = await res.json();
   if (!res.ok) {
     throw new Error(`Failed to fetch posts, received status ${res.status}`)
